@@ -13,8 +13,8 @@ services.getPage = function(url,id,callback,page){
 };
 services.routing = {};
 services.routing.changeHash = function(page){
-    var newPageUrl = 'app/'+ page + '/' + page+'.html';
-    var newScriptUrl = 'app/'+ page + '/' + page+'.js';
+    var newPageUrl = pageRoute.route + pageRoute.page;
+    var newScriptUrl = pageRoute.route + pageRoute.script;
     services.getPage(newPageUrl,'content',services.routing.writeHTML,page);
     services.getPage(newScriptUrl,'head',services.routing.writeScript,page);
 };
