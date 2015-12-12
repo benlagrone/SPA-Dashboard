@@ -10,7 +10,8 @@
         var dayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-        function getTime() {var today=new Date();
+        function getTime() {
+            var today=new Date();
             var h=today.getHours();
             var m=today.getMinutes();
             var s=today.getSeconds();
@@ -26,10 +27,13 @@
             if (i<10)i = "0" + i;  // add zero in front of numbers < 10
             return i;
         }
+        function foo(){
+            console.log("foo")
+        }
     </script>
 
 </head>
-<body onload="getTime()" class="color-4">
+<body onload="getTime(),foo()" class="color-4">
 
 <section>
     <div class="time color-0" id="time">FOO</div>

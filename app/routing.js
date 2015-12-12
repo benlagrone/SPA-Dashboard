@@ -10,11 +10,28 @@ routing.register = function(path, callBack){
 
 routing.register('home',function(){
     pageRoute = {
-        page:"home.html",
-        route:"app/home/",
-        script:"home.js"
+        page:"./app/home/home.html",
+        partial:"./app/home/home-home.html",
+        script:"./app/home/home.js"
     };
     console.log('home')
 });
 
 console.log(routing.routesArray);
+
+
+window.onhashchange = function () {
+    var url = window.location.hash.split('#')[1]
+    console.log(url)
+    //services.routing.useArray(url)
+};
+
+//window.onload = getLocationHash;
+if(window.location.hash=="")
+    window.location.hash = '#home';
+function getLocationHash(){
+
+    var url = window.location.hash.split('#')[1]
+    console.log(url)
+    //services.routing.useArray(url)
+}
